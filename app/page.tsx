@@ -273,41 +273,21 @@ export default function Home() {
           </div>
         </div>
 
-        {/* ===== Celular e tablet ===== */}
+        {/* ===== Celular e tablet =====
+            Usa a arte mobile do Wix (1080x2020): rosto no canto esquerdo e a logo
+            já embutidos na imagem. O texto entra na área verde, abaixo da faixa
+            do rosto, que ocupa os 24% superiores da imagem. */}
         <div className="relative lg:hidden">
-          {/* Faixa do topo: rosto à esquerda, logo à direita */}
-          <div className="relative h-[190px]">
-            <div className="absolute inset-y-0 left-0 w-[58%]">
-              <Image
-                src="/img/home-hero-bg.png"
-                alt="Malu Haddock Lobo"
-                fill
-                priority
-                sizes="60vw"
-                className="object-cover object-[82%_18%]"
-              />
-              {/* funde a foto no verde pela direita e por baixo */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(rgba(36,55,51,0.32), rgba(36,55,51,0.32)), linear-gradient(to right, rgba(36,55,51,0) 40%, #243733 100%), linear-gradient(to bottom, rgba(36,55,51,0) 50%, #243733 100%)",
-                }}
-                aria-hidden
-              />
-            </div>
+          <Image
+            src="/img/home-hero-mobile.jpg"
+            alt="Malu Haddock Lobo, Método Haddock Lobo"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-top"
+          />
 
-            <Image
-              src="/img/logo-metodo.png"
-              alt="Método Haddock Lobo"
-              width={1080}
-              height={2020}
-              priority
-              className="absolute right-4 top-3 h-[150px] w-[178px] object-cover object-center"
-            />
-          </div>
-
-          <div className="px-6 pb-9 text-center">
+          <div className="relative px-6 pb-9 pt-[46vw] text-center sm:pt-[200px]">
             <h1 className="font-caslon text-[17px] leading-[1.45] text-gold-light">
               Torne-se uma Aromaterapeuta Profissional com o Método Haddock Lobo – a formação que
               te entrega o mapa para você construir uma carreira lucrativa e reconhecida.
