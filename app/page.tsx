@@ -291,7 +291,7 @@ export default function Home() {
                 className="absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(to right, rgba(36,55,51,0) 45%, #243733 100%), linear-gradient(to bottom, rgba(36,55,51,0) 55%, #243733 100%)",
+                    "linear-gradient(rgba(36,55,51,0.32), rgba(36,55,51,0.32)), linear-gradient(to right, rgba(36,55,51,0) 40%, #243733 100%), linear-gradient(to bottom, rgba(36,55,51,0) 50%, #243733 100%)",
                 }}
                 aria-hidden
               />
