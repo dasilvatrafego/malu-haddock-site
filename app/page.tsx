@@ -214,44 +214,120 @@ const FAQ = [
 export default function Home() {
   return (
     <div className="bg-green-deep font-sans">
-      {/* ---------- 1. Hero ---------- */}
-      <section className="relative overflow-hidden bg-green-mid">
-        <Image
-          src="/img/home-hero-bg.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-right"
-        />
+      {/* ---------- 1. Hero ----------
+          O fundo #243733 é a cor exata do painel verde da imagem original, então a
+          foto (que começa em 54% da largura da imagem) emenda sem costura.
 
-        {/* No original esta seção tem ~537px de altura: a logo é uma caixa 257x217
-            que SOBREPÕE o título (o PNG tem muita área transparente). Por isso o
-            espaçamento vertical é curto — daí o -mt na área de texto. */}
-        <div className="site-container relative py-8 md:py-6">
-          <Image
-            src="/img/logo-metodo.png"
-            alt="Método Haddock Lobo"
-            width={1080}
-            height={2020}
-            priority
-            className="h-[130px] w-[154px] object-cover object-center md:-ml-[82px] md:h-[217px] md:w-[257px]"
-          />
+          Desktop (lg+): texto à esquerda em coluna própria; a foto ocupa a metade
+          direita com a diagonal recortada por clip-path. Assim o título nunca cai
+          sobre o rosto, em nenhuma largura de tela.
 
-          <div className="mt-2 max-w-[586px] md:-mt-[26px]">
-            <h1 className="font-caslon text-[24px] leading-[1.35] text-gold-light md:text-[26px]">
+          Celular: rosto da Malu no canto superior esquerdo, logo à direita, texto
+          centralizado por baixo, tudo sobre o verde. */}
+      <section className="relative overflow-hidden bg-[#243733]">
+
+        {/* ===== Desktop ===== */}
+        <div className="relative hidden h-[537px] lg:block">
+          <div
+            className="absolute inset-y-0 right-0 w-[58%]"
+            style={{ clipPath: "polygon(22% 0, 100% 0, 100% 100%, 0 100%)" }}
+          >
+            <Image
+              src="/img/home-hero-bg.png"
+              alt="Malu Haddock Lobo"
+              fill
+              priority
+              sizes="60vw"
+              className="object-cover object-[78%_center]"
+            />
+          </div>
+
+          <div className="site-container relative h-full">
+            {/* Logo: caixa 257x217 que sobrepõe o título, como no original */}
+            <Image
+              src="/img/logo-metodo.png"
+              alt="Método Haddock Lobo"
+              width={1080}
+              height={2020}
+              priority
+              className="-ml-[82px] mt-[-17px] h-[217px] w-[257px] object-cover object-center"
+            />
+
+            {/* Largura limitada a 50% da tela para nunca alcançar a foto */}
+            <div className="-mt-[26px] w-[min(586px,50vw)]">
+              <h1 className="font-caslon text-[26px] leading-[1.35] text-gold-light">
+                Torne-se uma Aromaterapeuta Profissional com o Método Haddock Lobo – a formação
+                que te entrega o mapa para você construir uma carreira lucrativa e reconhecida.
+              </h1>
+
+              <p className="mt-5 text-[18px] leading-[1.3] text-white">
+                Método validado, em mais de 25 anos de prática clínica, que ensina o passo a passo
+                claro para você atuar com confiança, reconhecimento e independência financeira na
+                Aromaterapia.
+              </p>
+
+              <div className="mt-7">
+                <Cta>QUERO ME INSCREVER AGORA</Cta>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ===== Celular e tablet ===== */}
+        <div className="relative lg:hidden">
+          {/* Faixa do topo: rosto à esquerda, logo à direita */}
+          <div className="relative h-[190px]">
+            <div className="absolute inset-y-0 left-0 w-[58%]">
+              <Image
+                src="/img/home-hero-bg.png"
+                alt="Malu Haddock Lobo"
+                fill
+                priority
+                sizes="60vw"
+                className="object-cover object-[82%_18%]"
+              />
+              {/* funde a foto no verde pela direita e por baixo */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to right, rgba(36,55,51,0) 45%, #243733 100%), linear-gradient(to bottom, rgba(36,55,51,0) 55%, #243733 100%)",
+                }}
+                aria-hidden
+              />
+            </div>
+
+            <Image
+              src="/img/logo-metodo.png"
+              alt="Método Haddock Lobo"
+              width={1080}
+              height={2020}
+              priority
+              className="absolute right-4 top-3 h-[150px] w-[178px] object-cover object-center"
+            />
+          </div>
+
+          <div className="px-6 pb-9 text-center">
+            <h1 className="font-caslon text-[17px] leading-[1.45] text-gold-light">
               Torne-se uma Aromaterapeuta Profissional com o Método Haddock Lobo – a formação que
               te entrega o mapa para você construir uma carreira lucrativa e reconhecida.
             </h1>
 
-            <p className="mt-5 max-w-[602px] text-[17px] leading-[1.3] text-white md:text-[18px]">
+            <p className="mt-5 text-[15px] leading-[1.5] text-white">
               Método validado, em mais de 25 anos de prática clínica, que ensina o passo a passo
               claro para você atuar com confiança, reconhecimento e independência financeira na
               Aromaterapia.
             </p>
 
-            <div className="mt-7">
-              <Cta>QUERO ME INSCREVER AGORA</Cta>
+            <div className="mt-6">
+              <a
+                href={CHECK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full rounded-[5px] bg-cta py-3 text-center font-sans text-[17px] font-bold text-white shadow-[0_1px_4px_0_rgba(0,0,0,0.6)] transition-colors hover:bg-[#2CAB24]"
+              >
+                QUERO ME INSCREVER AGORA
+              </a>
             </div>
           </div>
         </div>
