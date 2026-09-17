@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+.env*.local
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+
+.vercel
+
+# Vercel (vínculo local com o projeto; cada máquina faz o seu com `vercel link`)
+.vercel

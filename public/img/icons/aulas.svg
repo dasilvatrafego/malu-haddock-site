@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-bbox="18.967 49.419 162.066 101.162" viewBox="0 0 200 200" height="200" width="200" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" data-type="color">
+    <g>
+        <path d="M140.954 132.752H31.496c-6.266 0-11.393-5.127-11.393-11.393V62.128c0-6.266 5.127-11.393 11.393-11.393h109.458c6.266 0 11.393 5.127 11.393 11.393V96.73l-3.292-.848 3.292 7.619v17.859c0 6.266-5.127 11.392-11.393 11.392z" fill="#9DB39F" data-color="1"/>
+        <path d="M140.722 134.43H31.425c-6.869 0-12.458-5.589-12.458-12.458V61.877c0-6.869 5.589-12.458 12.458-12.458h109.297c6.869 0 12.458 5.588 12.458 12.458V96.73h-2.072V61.877c0-5.727-4.659-10.386-10.386-10.386H31.425c-5.727 0-10.386 4.659-10.386 10.386v60.095c0 5.727 4.659 10.386 10.386 10.386h109.297c5.727 0 10.386-4.659 10.386-10.386v-16.984h2.072v16.984c0 6.869-5.589 12.458-12.458 12.458z" fill="#0C4426" data-color="2"/>
+        <path fill="#0C4426" d="M87.548 132.675v16.869h-2.072v-16.869h2.072z" data-color="2"/>
+        <path d="M102.942 150.581H69.204a1.036 1.036 0 0 1 0-2.072h33.738a1.036 1.036 0 0 1 0 2.072z" fill="#0C4426" data-color="2"/>
+        <path d="M178.084 128.448c-.696 0-1.433-.249-2.104-.839l-11.562-11.56-4.209 11.209-13.922-33.817 34.126 12.675-11.813 5.562 11.729 11.753c1.132 1.64.756 3.257-.12 4.133a3.03 3.03 0 0 1-2.125.884zm-14.475-16.137l13.788 13.788c.68.595 1.242.104 1.347 0 .123-.123.471-.581-.071-1.418l-13.622-13.622 10.021-4.718-25.065-9.31 10.115 24.57 3.487-9.29z" fill="#0C4426" data-color="2"/>
+        <defs>
+            <path id="bff3f63d-3ee4-4d08-8759-52b3360bca2d" d="M59.298 92.208a7.016 7.016 0 1 1-14.032 0 7.016 7.016 0 0 1 14.032 0z"/>
+        </defs>
+        <clipPath id="cd8a1c25-989c-4768-a99e-d5f178489a78">
+            <use overflow="visible" xlink:href="#bff3f63d-3ee4-4d08-8759-52b3360bca2d"/>
+        </clipPath>
+        <g clip-path="url(#cd8a1c25-989c-4768-a99e-d5f178489a78)">
+            <defs>
+                <path id="88f04dfe-dd5b-4e6d-9828-27170dd267dd" d="M897.643-5732.346V5757.889h-4385.938V-5732.346H897.643z"/>
+            </defs>
+            <clipPath id="4f1ea41c-7a6c-46cf-92d9-6321b9d60a7f">
+                <use overflow="visible" xlink:href="#88f04dfe-dd5b-4e6d-9828-27170dd267dd"/>
+            </clipPath>
+            <g clip-path="url(#4f1ea41c-7a6c-46cf-92d9-6321b9d60a7f)">
+                <path fill="#0C4426" d="M70.72 73.77v36.876H33.844V73.77H70.72z" data-color="2"/>
+            </g>
+        </g>
+        <defs>
+            <path id="cdc360de-8a18-4e7e-ace8-d7cf4ebdf4ff" d="M93.265 92.208a7.016 7.016 0 1 1-14.032 0 7.016 7.016 0 0 1 14.032 0z"/>
+        </defs>
+        <clipPath id="913e2718-1cac-44eb-8933-9f729f173d08">
+            <use overflow="visible" xlink:href="#cdc360de-8a18-4e7e-ace8-d7cf4ebdf4ff"/>
+        </clipPath>
+        <g clip-path="url(#913e2718-1cac-44eb-8933-9f729f173d08)">
+            <defs>
+                <path id="5342574e-c7ff-43d1-b82e-0a5c1e2bb84a" d="M897.643-5732.346V5757.889h-4385.938V-5732.346H897.643z"/>
+            </defs>
+            <clipPath id="24b6ba04-e711-4636-9225-c95c335e2029">
+                <use overflow="visible" xlink:href="#5342574e-c7ff-43d1-b82e-0a5c1e2bb84a"/>
+            </clipPath>
+            <g clip-path="url(#24b6ba04-e711-4636-9225-c95c335e2029)">
+                <path fill="#0C4426" d="M104.687 73.77v36.876H67.811V73.77h36.876z" data-color="2"/>
+            </g>
+        </g>
+        <defs>
+            <path id="78186814-3dcd-4e6d-9170-37c396c96fb8" d="M127.53 92.208a7.016 7.016 0 1 1-14.032 0 7.016 7.016 0 0 1 14.032 0z"/>
+        </defs>
+        <clipPath id="ce7339a4-8cb1-4ef6-8566-d5ba98f728fa">
+            <use overflow="visible" xlink:href="#78186814-3dcd-4e6d-9170-37c396c96fb8"/>
+        </clipPath>
+        <g clip-path="url(#ce7339a4-8cb1-4ef6-8566-d5ba98f728fa)">
+            <defs>
+                <path id="0f78c1c2-611f-493a-8841-72ba651cb9ce" d="M897.643-5732.346V5757.889h-4385.938V-5732.346H897.643z"/>
+            </defs>
+            <clipPath id="180de390-0dbb-4c24-b3ea-d65d3e096e57">
+                <use overflow="visible" xlink:href="#0f78c1c2-611f-493a-8841-72ba651cb9ce"/>
+            </clipPath>
+            <g clip-path="url(#180de390-0dbb-4c24-b3ea-d65d3e096e57)">
+                <path fill="#0C4426" d="M138.952 73.77v36.876h-36.876V73.77h36.876z" data-color="2"/>
+            </g>
+        </g>
+    </g>
+</svg>
