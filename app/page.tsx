@@ -222,8 +222,10 @@ export default function Home() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-right"
+          className="object-cover object-[70%_25%] lg:object-right"
         />
+
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-transparent" />
 
         {/* No original esta seção tem ~537px de altura: a logo é uma caixa 257x217
             que SOBREPÕE o título (o PNG tem muita área transparente). Por isso o
@@ -238,7 +240,7 @@ export default function Home() {
             className="h-[130px] w-[154px] object-cover object-center md:-ml-[82px] md:h-[217px] md:w-[257px]"
           />
 
-          <div className="mt-2 max-w-[586px] md:-mt-[26px]">
+          <div className="mt-2 max-w-[clamp(280px,60vw,586px)] md:-mt-[26px]">
             <h1 className="font-caslon text-[24px] leading-[1.35] text-gold-light md:text-[26px]">
               Torne-se uma Aromaterapeuta Profissional com o Método Haddock Lobo – a formação que
               te entrega o mapa para você construir uma carreira lucrativa e reconhecida.
