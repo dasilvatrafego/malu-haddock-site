@@ -2,6 +2,8 @@
 
 Site oficial em https://maluhaddocklobo.com, construído em Next.js 16 + Tailwind CSS 4, hospedado na Vercel.
 
+Repositório: https://github.com/dasilvatrafego/malu-haddock-site
+
 **Publicação é automática:** todo push na branch `main` sobe para o site em ~2 minutos. Não existe botão de publicar.
 
 ## Rodar no seu computador
