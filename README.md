@@ -62,12 +62,12 @@ Antes de dar push, rode `npm run build` uma vez. Se der erro, a Vercel também v
 
 ## Formulários
 
-Dois formulários gravam leads no Supabase pela rota `app/api/contato/route.ts`:
+Dois formulários gravam leads numa planilha do Google Sheets ([Contatos do Site — Malu Haddock Lobo](https://docs.google.com/spreadsheets/d/1CTMYkqcRGCVxhhUXsY-yMlRbwqY9YqR5VjixiEP2sc0/edit)), pela rota `app/api/contato/route.ts`:
 
 - `/terapiaintegral` (contato)
 - `/preinscricao40` (pré-lançamento, depois manda para o grupo do WhatsApp)
 
-Dependem de duas variáveis de ambiente na Vercel: `SUPABASE_URL` e `SUPABASE_SERVICE_ROLE_KEY`. Sem elas o site funciona normalmente, mas os leads não são gravados. A estrutura da tabela está comentada no topo do `route.ts`.
+A rota envia os dados para um Apps Script publicado como Web App dentro da própria planilha (código em `docs/sheets-webapp.gs`). Dependem de duas variáveis de ambiente na Vercel: `SHEETS_WEBAPP_URL` (a URL do Web App, termina em `/exec`) e `SHEETS_WEBAPP_SECRET` (precisa ser igual ao `SECRET` do Apps Script). Sem elas o site funciona normalmente, mas os leads não são gravados.
 
 ## Coisas herdadas do site antigo que valem revisão
 

@@ -26,7 +26,7 @@ export default function FormularioContato() {
       const r = await fetch("/api/contato", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(dados),
+        body: JSON.stringify({ ...dados, origem: "terapiaintegral" }),
       });
       if (!r.ok) throw new Error((await r.json().catch(() => ({}))).erro || "Falha no envio");
       form.reset();

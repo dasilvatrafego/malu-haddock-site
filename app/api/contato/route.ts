@@ -1,22 +1,13 @@
 import { NextResponse } from "next/server";
 
 /**
- * Recebe o formulário de contato de /terapiaintegral e grava no Supabase.
+ * Recebe o formulário de contato de /terapiaintegral e /preinscricao40 e
+ * grava numa planilha do Google Sheets, via um Apps Script publicado como
+ * Web App na própria planilha.
  *
  * Configuração necessária (Vercel > Environment Variables):
- *   SUPABASE_URL                 URL do projeto Supabase
- *   SUPABASE_SERVICE_ROLE_KEY    chave service_role (somente servidor, nunca no cliente)
- *
- * Tabela esperada:
- *   create table contatos_site (
- *     id          bigint generated always as identity primary key,
- *     nome        text not null,
- *     telefone    text not null,
- *     email       text not null,
- *     mensagem    text,
- *     origem      text,
- *     criado_em   timestamptz not null default now()
- *   );
+ *   SHEETS_WEBAPP_URL      URL do Web App do Apps Script (termina em /exec)
+ *   SHEETS_WEBAPP_SECRET   mesmo valor configurado no Apps Script (SECRET)
  *
  * Enquanto as variáveis não existirem, o envio devolve erro 503 e o formulário
  * oferece o WhatsApp como alternativa — nenhum lead se perde silenciosamente.
@@ -63,11 +54,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ erro: "E-mail inválido" }, { status: 400 });
   }
 
-  const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const url = process.env.SHEETS_WEBAPP_URL;
+  const secret = process.env.SHEETS_WEBAPP_SECRET;
 
-  if (!url || !key) {
-    console.error("[contato] SUPABASE_URL/SUPABASE_SERVICE_ROLE_KEY não configurados", {
+  if (!url || !secret) {
+    console.error("[contato] SHEETS_WEBAPP_URL/SHEETS_WEBAPP_SECRET não configurados", {
       nome,
       email,
       telefone,
@@ -75,15 +66,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ erro: "Envio indisponível no momento" }, { status: 503 });
   }
 
-  const r = await fetch(`${url}/rest/v1/contatos_site`, {
+  const r = await fetch(url, {
     method: "POST",
-    headers: {
-      apikey: key,
-      Authorization: `Bearer ${key}`,
-      "Content-Type": "application/json",
-      Prefer: "return=minimal",
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
+      secret,
       nome,
       telefone,
       email,
@@ -92,8 +79,9 @@ export async function POST(req: Request) {
     }),
   });
 
-  if (!r.ok) {
-    console.error("[contato] Supabase respondeu", r.status, await r.text().catch(() => ""));
+  const resultado = await r.json().catch(() => null);
+  if (!r.ok || !resultado?.ok) {
+    console.error("[contato] Apps Script respondeu", r.status, JSON.stringify(resultado));
     return NextResponse.json({ erro: "Não foi possível registrar" }, { status: 502 });
   }
 
