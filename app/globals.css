@@ -38,6 +38,13 @@
   --color-ti-blush:     #E4BFAD;  /* cards de benefícios */
   --color-ti-verde:     #30574E;  /* texto dentro dos cards */
 
+  /* Paleta da página /destraveseusoleos (Black Friday: preto + dourado do selo) */
+  --color-bf-black:     #110F0D;  /* fundo das dobras escuras */
+  --color-bf-ink:       #1E1A16;  /* cards sobre o preto */
+  --color-bf-gold:      #C9A04A;  /* dourado do selo */
+  --color-bf-gold-lt:   #E8CB82;  /* dourado claro, destaques no preto */
+  --color-bf-cream:     #F7F2E9;  /* dobras claras */
+
   /* Tipografia */
   --font-serif:   var(--font-cormorant), Georgia, serif;      /* = Cormorant Garamond (original) */
   --font-sans:    var(--font-opensans), system-ui, sans-serif; /* = Open Sans (original) */
