@@ -15,11 +15,10 @@ export const metadata: Metadata = {
 
 /*
  * PENDÊNCIAS desta página (ver "Estratégia de Combo — Black Friday 2026", seção 6):
- * 1) Link do checkout: CHECKOUT.destraveSeusOleos em lib/site.ts.
- * 2) Preço avulso de Aromaterapia na Prática e de Aromaterapia e Ayurveda
+ * 1) Preço avulso de Aromaterapia na Prática e de Aromaterapia e Ayurveda
  *    (para confirmar que o "de R$ 990" é a soma dos três cursos).
- * 3) Rituais do Curso 2 além do Shiroabhyanga.
- * 4) Depoimentos reais de alunas.
+ * 2) Rituais do Curso 2 além do Shiroabhyanga.
+ * 3) Depoimentos reais de alunas.
  */
 const CHECK = CHECKOUT.destraveSeusOleos;
 
@@ -28,6 +27,9 @@ const CHECK = CHECKOUT.destraveSeusOleos;
 const SELO = "/img/destrave-selo.png";
 /** PENDENTE: trocar pela foto dos vidrinhos na gaveta usada na prévia da Lovable. */
 const FOTO_HERO = "/img/maos-oleo-escuro.jpg";
+
+/** Preço do combo (12x com juros, conforme a Hotmart). */
+const PRECO = { de: "R$ 990,00", parcela: "R$ 30,72", vista: "R$ 297,00" };
 
 /** Fim da oferta: Cyber Monday, 30/11/2026, 23h59 (horário de Brasília). */
 const FIM_DA_OFERTA = "2026-11-30T23:59:59-03:00";
@@ -175,12 +177,14 @@ function PrecoBotao({
           BLACK FRIDAY · 3 CURSOS
         </p>
         <p className="mt-1 text-bf-cream">
-          <span className="text-[16px] text-bf-cream/60 line-through">R$ 990</span>{" "}
+          <span className="text-[15px] text-bf-cream/60 line-through">R$ 990</span>{" "}
           <span className="text-[15px]">por</span>{" "}
+          <span className="text-[15px]">12x</span>{" "}
           <span className="font-serif text-[34px] font-semibold leading-none text-bf-gold-lt">
-            R$ 297
+            {PRECO.parcela}
           </span>
         </p>
+        <p className="text-[13px] text-bf-cream/70">ou {PRECO.vista} à vista</p>
       </div>
       <Cta className="shrink-0">{cta}</Cta>
     </div>
@@ -197,11 +201,27 @@ function Oferta({ id, cta }: { id?: string; cta?: string }) {
       <span className="inline-block rounded-[15px] bg-bf-gold px-4 py-1.5 text-[12px] font-bold tracking-[0.2em] text-bf-black">
         BLACK FRIDAY
       </span>
-      <p className="mt-5 text-[17px]">3 cursos completos. De</p>
-      <p className="text-[22px] text-bf-cream/60 line-through">R$ 990,00</p>
-      <p className="mt-1 text-[17px]">por apenas</p>
-      <p className="mt-2 font-serif text-[56px] leading-none text-bf-gold-lt md:text-[72px]">R$ 297,00</p>
-      <p className="mt-3 text-[14px] text-bf-cream/70">À vista ou parcelado no cartão, pela Hotmart.</p>
+      <p className="mt-5 text-[17px]">
+        3 cursos completos. De{" "}
+        <span className="text-bf-cream/60 line-through">{PRECO.de}</span> por:
+      </p>
+
+      {/* Valor em destaque: parcela grande, à vista logo abaixo */}
+      <div className="mx-auto mt-5 max-w-[420px] rounded-[15px] border-2 border-bf-gold bg-gradient-to-b from-bf-ink to-bf-black px-6 py-7 shadow-[0_0_40px_rgba(201,160,74,0.18)]">
+        <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-bf-gold">
+          Em até 12x de
+        </p>
+        <p className="mt-2 font-serif text-[64px] font-semibold leading-none text-bf-gold-lt md:text-[80px]">
+          {PRECO.parcela}
+        </p>
+        <div className="mx-auto my-5 h-px w-24 bg-bf-gold/40" />
+        <p className="text-[18px] text-bf-cream">
+          ou <strong className="text-[24px] text-bf-cream">{PRECO.vista}</strong> à vista
+        </p>
+      </div>
+      <p className="mt-3 text-[13px] text-bf-cream/60">
+        Parcelamento com juros no cartão, pela Hotmart.
+      </p>
 
       <p className="mt-8 text-[13px] font-bold tracking-[0.15em] text-bf-gold">
         A OFERTA ENCERRA NA CYBER MONDAY, 30/11, ÀS 23H59
@@ -262,8 +282,9 @@ export default function DestraveSeusOleos() {
               <Cta>Quero meus óleos fora da gaveta</Cta>
             </div>
             <p className="mt-5 text-[14px] text-bf-cream/70">
-              3 cursos · De R$ 990 por <strong className="text-bf-gold-lt">R$ 297</strong> ·
-              Garantia de 7 dias
+              3 cursos · De R$ 990 por{" "}
+              <strong className="text-bf-gold-lt">12x de {PRECO.parcela}</strong> ou {PRECO.vista} à
+              vista · Garantia de 7 dias
             </p>
           </Reveal>
 
