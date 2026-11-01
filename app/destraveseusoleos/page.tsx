@@ -22,13 +22,11 @@ export const metadata: Metadata = {
  */
 const CHECK = CHECKOUT.destraveSeusOleos;
 
-/** Selo "Black Friday · Destrave seus Óleos". PENDENTE: salvar o arquivo em
- *  public/img/destrave-selo.png. Enquanto não existir, o hero mostra só o texto. */
+/** Selo "Black Friday · Destrave seus Óleos". Se o arquivo faltar, o hero mostra só o texto. */
 const SELO = "/img/destrave-selo.png";
-/** PENDENTE: trocar pela foto dos vidrinhos na gaveta usada na prévia da Lovable. */
-const FOTO_HERO = "/img/maos-oleo-escuro.jpg";
+const FOTO_HERO = "/img/maos-oleos-brasileiros.jpg";
 
-/** Preço do combo (12x com juros, conforme a Hotmart). */
+/** Preço do combo (parcela conforme o checkout da Hotmart). */
 const PRECO = { de: "R$ 990,00", parcela: "R$ 30,72", vista: "R$ 297,00" };
 
 /** Fim da oferta: Cyber Monday, 30/11/2026, 23h59 (horário de Brasília). */
@@ -219,10 +217,6 @@ function Oferta({ id, cta }: { id?: string; cta?: string }) {
           ou <strong className="text-[24px] text-bf-cream">{PRECO.vista}</strong> à vista
         </p>
       </div>
-      <p className="mt-3 text-[13px] text-bf-cream/60">
-        Parcelamento com juros no cartão, pela Hotmart.
-      </p>
-
       <p className="mt-8 text-[13px] font-bold tracking-[0.15em] text-bf-gold">
         A OFERTA ENCERRA NA CYBER MONDAY, 30/11, ÀS 23H59
       </p>
@@ -251,10 +245,10 @@ export default function DestraveSeusOleos() {
               <Image
                 src={SELO}
                 alt="Black Friday · Destrave seus Óleos · Combo de cursos"
-                width={1254}
-                height={1254}
+                width={640}
+                height={640}
                 priority
-                className="h-[132px] w-[132px] md:h-[156px] md:w-[156px]"
+                className="h-[150px] w-[150px] rounded-full md:h-[190px] md:w-[190px]"
               />
             ) : (
               <p className="text-[13px] font-bold tracking-[0.25em] text-bf-gold">
@@ -273,7 +267,7 @@ export default function DestraveSeusOleos() {
 
             <p className="mt-7 max-w-[540px] text-[17px] leading-[1.75] text-bf-cream/80">
               Três cursos com Malu Haddock Lobo, mais de 25 anos de prática clínica em
-              aromaterapia e Ayurveda, formação na França e na Inglaterra. Você vai aprender a
+              aromaterapia e Ayurveda e formação internacional. Você vai aprender a
               usar seus óleos com segurança, descobrir quais combinam com o seu tipo e criar
               seus próprios cosméticos, sem toxinas silenciosas.
             </p>
@@ -293,11 +287,11 @@ export default function DestraveSeusOleos() {
             <div className="relative mx-auto aspect-[4/5] w-full max-w-[440px] overflow-hidden rounded-t-full border border-bf-gold/40">
               <Image
                 src={FOTO_HERO}
-                alt="Óleo essencial sendo pingado na palma da mão"
+                alt="Mãos segurando frascos de óleos essenciais de aroeira, breu branco e cagaita"
                 fill
                 priority
                 sizes="(min-width: 768px) 440px, 100vw"
-                className="object-cover object-[65%_center]"
+                className="object-cover object-[45%_center]"
               />
             </div>
           </Reveal>
@@ -463,11 +457,11 @@ export default function DestraveSeusOleos() {
           <Reveal>
             <div className="relative mx-auto aspect-[3/4] w-full max-w-[400px] overflow-hidden rounded-t-full border border-bf-gold/40 shadow-[0_20px_40px_rgba(0,0,0,0.18)]">
               <Image
-                src="/img/pilar1-malu.jpg"
-                alt="Malu Haddock Lobo em um campo ao pôr do sol"
+                src="/img/malu-cachoeira-oleos.jpg"
+                alt="Malu Haddock Lobo sentada numa pedra junto a uma cachoeira, com frascos de óleos essenciais"
                 fill
                 sizes="(min-width: 768px) 400px, 100vw"
-                className="object-cover"
+                className="object-cover object-[60%_center]"
               />
             </div>
           </Reveal>
@@ -479,7 +473,7 @@ export default function DestraveSeusOleos() {
             </h2>
             <p className="mt-6 text-[17px] leading-[1.75] text-[#3a332c]">
               Aromaterapeuta, educadora e praticante em aromaterapia e Ayurveda. São mais de 25
-              anos de prática clínica, com formação na França e na Inglaterra.
+              anos de prática clínica, com formação internacional.
             </p>
             <p className="mt-5 font-serif text-[24px] italic leading-[1.4] text-bf-gold">
               Ela ensina do jeito que pratica: com rigor científico e respeito às tradições que
@@ -490,7 +484,7 @@ export default function DestraveSeusOleos() {
               {[
                 { n: "+25 anos", d: "de prática clínica" },
                 { n: "+8.000", d: "alunas formadas" },
-                { n: "França e UK", d: "formação internacional" },
+                { n: "ITHMA", d: "formação no Reino Unido" },
               ].map((s) => (
                 <div key={s.n} className="rounded-[10px] bg-bf-black px-2 py-4">
                   <p className="font-serif text-[20px] font-semibold leading-tight text-bf-gold-lt md:text-[22px]">
@@ -558,8 +552,8 @@ export default function DestraveSeusOleos() {
               <Image
                 src={SELO}
                 alt="Black Friday · Destrave seus Óleos · Combo de cursos"
-                width={1254}
-                height={1254}
+                width={640}
+                height={640}
                 className="mx-auto h-[200px] w-[200px] rounded-full ring-1 ring-bf-gold/50 ring-offset-8 ring-offset-bf-black md:h-[260px] md:w-[260px]"
               />
             )}
