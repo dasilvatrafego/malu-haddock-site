@@ -480,11 +480,10 @@ export default function DestraveSeusOleos() {
               guardaram esse saber por milênios.
             </p>
 
-            <div className="mt-8 grid grid-cols-3 gap-3 text-center">
+            <div className="mt-8 grid max-w-[420px] grid-cols-2 gap-3 text-center">
               {[
                 { n: "+25 anos", d: "de prática clínica" },
                 { n: "+8.000", d: "alunas formadas" },
-                { n: "ITHMA", d: "formação no Reino Unido" },
               ].map((s) => (
                 <div key={s.n} className="rounded-[10px] bg-bf-black px-2 py-4">
                   <p className="font-serif text-[20px] font-semibold leading-tight text-bf-gold-lt md:text-[22px]">
