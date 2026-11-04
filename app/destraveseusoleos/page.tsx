@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const CHECK = CHECKOUT.destraveSeusOleos;
 
 /** Selo "Black Friday · Destrave seus Óleos". Se o arquivo faltar, o hero mostra só o texto. */
-const SELO = "/img/destrave-selo.png";
+const SELO = "/img/destrave-selo-recortado.png";
 const FOTO_HERO = "/img/maos-oleos-brasileiros.jpg";
 
 /** Preço do combo (parcela conforme o checkout da Hotmart). */
@@ -292,7 +292,7 @@ export default function DestraveSeusOleos() {
                 src={SELO}
                 alt="Black Friday · Destrave seus Óleos · Combo de cursos"
                 width={640}
-                height={640}
+                height={647}
                 priority
                 className="h-[104px] w-[104px] rounded-full md:hidden"
               />
@@ -328,24 +328,27 @@ export default function DestraveSeusOleos() {
 
           <Reveal delay={150}>
             {/* Foto em arco, como na prévia da Lovable */}
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-[400px] overflow-hidden rounded-t-full border border-bf-gold/40 md:h-[min(500px,calc(100svh-140px))] md:w-auto md:max-w-full">
-              <Image
-                src={FOTO_HERO}
-                alt="Mãos segurando frascos de óleos essenciais de aroeira, breu branco e cagaita"
-                fill
-                priority
-                sizes="(min-width: 768px) 440px, 100vw"
-                className="object-cover object-[45%_center]"
-              />
-              {/* No computador, o selo fica no alto da foto (no celular ele vem acima do título) */}
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[400px] md:h-[min(500px,calc(100svh-140px))] md:w-auto md:max-w-full">
+              <div className="absolute inset-0 overflow-hidden rounded-t-full border border-bf-gold/40">
+                <Image
+                  src={FOTO_HERO}
+                  alt="Mãos segurando frascos de óleos essenciais de aroeira, breu branco e cagaita"
+                  fill
+                  priority
+                  sizes="(min-width: 768px) 440px, 100vw"
+                  className="object-cover object-[45%_center]"
+                />
+              </div>
+              {/* No computador, o selo fica como um carimbo no canto do arco
+                  (no celular ele vem acima do título) */}
               {temSelo && (
                 <Image
                   src={SELO}
                   alt="Black Friday · Destrave seus Óleos · Combo de cursos"
                   width={640}
-                  height={640}
+                  height={647}
                   priority
-                  className="absolute top-[3%] left-1/2 hidden aspect-square w-[44%] max-w-[185px] -translate-x-1/2 rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.5)] md:block"
+                  className="absolute -top-[3%] -right-[6%] hidden w-[50%] max-w-[230px] drop-shadow-[0_10px_24px_rgba(0,0,0,0.55)] md:block"
                 />
               )}
             </div>
@@ -533,11 +536,14 @@ export default function DestraveSeusOleos() {
               Malu Haddock Lobo
             </h2>
             <p className="mt-6 text-[17px] leading-[1.75] text-[#3a332c]">
-              Aromaterapeuta, educadora e praticante em aromaterapia e Ayurveda. São mais de 25
+              <strong className="font-bold text-black">
+                Aromaterapeuta, educadora e praticante em aromaterapia
+              </strong>{" "}
+              e Ayurveda. São mais de 25
               anos de prática clínica, com formação internacional.
             </p>
             <p className="mt-5 font-serif text-[24px] italic leading-[1.4] text-bf-gold">
-              Ela ensina do jeito que pratica: com rigor científico e respeito às tradições que
+              <strong className="font-bold">Ela ensina do jeito que pratica:</strong> com rigor científico e respeito às tradições que
               guardaram esse saber por milênios.
             </p>
 
@@ -607,7 +613,7 @@ export default function DestraveSeusOleos() {
                 src={SELO}
                 alt="Black Friday · Destrave seus Óleos · Combo de cursos"
                 width={640}
-                height={640}
+                height={647}
                 className="mx-auto h-[200px] w-[200px] rounded-full md:h-[260px] md:w-[260px]"
               />
             )}
