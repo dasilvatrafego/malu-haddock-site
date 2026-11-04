@@ -24,6 +24,8 @@ export const CHECKOUT = {
   terapiaIntegral: "https://pay.hotmart.com/Q66497469T?off=v2qglwhc",
   /** /cosmetico */
   cosmetico: "https://pay.hotmart.com/S80063284V",
+  /** /destraveseusoleos — combo de Black Friday */
+  destraveSeusOleos: "https://pay.hotmart.com/O108280785F",
 } as const;
 
 /** Grupo de WhatsApp do pré-lançamento Travessia (Mulheres 40+). */

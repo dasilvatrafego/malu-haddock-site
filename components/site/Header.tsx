@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import HeaderTagline from "./HeaderTagline";
 
 /** Barra verde do topo com a logo — igual ao original (54px de altura). */
 export default function Header() {
@@ -16,6 +17,7 @@ export default function Header() {
             className="h-[30px] w-auto"
           />
         </Link>
+        <HeaderTagline />
       </div>
     </header>
   );
