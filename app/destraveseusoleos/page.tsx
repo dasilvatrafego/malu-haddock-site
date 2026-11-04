@@ -18,7 +18,6 @@ export const metadata: Metadata = {
  * 1) Preço avulso de Aromaterapia na Prática e de Aromaterapia e Ayurveda
  *    (para confirmar que o "de R$ 990" é a soma dos três cursos).
  * 2) Rituais do Curso 2 além do Shiroabhyanga.
- * 3) Depoimentos reais de alunas.
  */
 const CHECK = CHECKOUT.destraveSeusOleos;
 
@@ -146,8 +145,31 @@ const PARA_QUEM_E: { icone: keyof typeof ICONES; texto: string }[] = [
   { icone: "folha", texto: "Busca um cuidado natural que une ciência, ritual e ancestralidade" },
 ];
 
-/** Depoimentos de alunas (texto curto + nome). PENDENTE: preencher. */
-const DEPOIMENTOS: { texto: string; autora: string }[] = [];
+/** Depoimentos em vídeo, reaproveitados da home e da página /cosmetico. */
+const DEPOIMENTOS = [
+  {
+    video: "/video/depoimento-1.mp4",
+    poster: "/img/poster-depoimento-1.jpg",
+    texto:
+      "“Eu já tinha feito outros cursos de aromaterapia, mas nada se compara ao tamanho de conhecimento e generosidade que a Malu tem.”",
+    autora: "Raquel",
+    detalhe: "Massoterapeuta e aromaterapeuta",
+  },
+  {
+    video: "/video/cosmetico-lua.mp4",
+    poster: "/img/poster-cosmetico-lua.jpg",
+    texto: "“Antes eu tinha medo de errar nas formulações. Hoje eu sei exatamente o que estou fazendo.”",
+    autora: "Lua Marotta",
+    detalhe: "Aluna de Cosméticos Naturais Seguros",
+  },
+  {
+    video: "/video/cosmetico-lygia.mp4",
+    poster: "/img/poster-cosmetico-lygia.jpg",
+    texto: "“Eu tinha medo de errar nas dosagens, mas passei a formular com confiança.”",
+    autora: "Lygia",
+    detalhe: "Aluna de Cosméticos Naturais Seguros",
+  },
+];
 
 const PARA_QUEM_NAO_E = [
   "Procura fórmula mágica ou substituto de acompanhamento médico",
@@ -498,50 +520,44 @@ export default function DestraveSeusOleos() {
         </div>
       </section>
 
-      {/* ---------- 7. Depoimentos ----------
-          PENDENTE: depoimentos reais de alunas. Enquanto DEPOIMENTOS estiver vazio,
-          os quadros de espaço reservado aparecem só nas prévias da Vercel e no
-          ambiente local, nunca em produção. */}
-      {(DEPOIMENTOS.length > 0 || process.env.VERCEL_ENV !== "production") && (
-        <section className="bg-bf-cream py-16 md:py-24">
-          <div className="site-container">
-            <Reveal>
-              <p className="text-center text-[12px] font-bold tracking-[0.3em] text-bf-gold">
-                QUEM JÁ TIROU OS ÓLEOS DA GAVETA
-              </p>
-              <h2 className="mt-4 text-center font-serif text-[34px] text-black md:text-[42px]">
-                O que dizem as alunas
-              </h2>
-            </Reveal>
+      {/* ---------- 7. Depoimentos ---------- */}
+      <section className="bg-bf-cream py-16 md:py-24">
+        <div className="site-container">
+          <Reveal>
+            <p className="text-center text-[12px] font-bold tracking-[0.3em] text-bf-gold">
+              QUEM JÁ TIROU OS ÓLEOS DA GAVETA
+            </p>
+            <h2 className="mt-4 text-center font-serif text-[34px] text-black md:text-[42px]">
+              O que dizem as alunas
+            </h2>
+          </Reveal>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {DEPOIMENTOS.length > 0
-                ? DEPOIMENTOS.map((d, i) => (
-                    <Reveal key={d.autora} delay={i * 100}>
-                      <figure className="flex h-full flex-col rounded-[15px] bg-bf-black px-7 py-8">
-                        <span className="font-serif text-[56px] leading-none text-bf-gold">“</span>
-                        <blockquote className="mt-2 flex-1 text-[16px] leading-[1.7] text-bf-cream/85">
-                          {d.texto}
-                        </blockquote>
-                        <figcaption className="mt-6 border-t border-bf-gold/25 pt-4 text-[14px] font-bold tracking-wide text-bf-gold-lt">
-                          {d.autora}
-                        </figcaption>
-                      </figure>
-                    </Reveal>
-                  ))
-                : [1, 2, 3].map((n) => (
-                    <div
-                      key={n}
-                      className="flex h-[220px] items-center justify-center rounded-[15px] border-2 border-dashed border-bf-gold/40 text-[15px] text-[#7a6f63]"
-                    >
-                      Depoimento de aluna {n}
+          <div className="mx-auto mt-12 grid max-w-[900px] gap-6 md:grid-cols-3">
+            {DEPOIMENTOS.map((d, i) => (
+              <Reveal key={d.autora} delay={i * 100}>
+                <figure className="flex h-full flex-col rounded-[15px] bg-bf-black p-4">
+                  <video
+                    src={d.video}
+                    poster={d.poster}
+                    controls
+                    preload="none"
+                    playsInline
+                    className="aspect-square w-full rounded-[10px] bg-black object-cover"
+                  />
+                  <figcaption className="flex flex-1 flex-col px-2 pt-5 pb-2">
+                    <p className="text-[15px] leading-[1.65] text-bf-cream/85">{d.texto}</p>
+                    <div className="mt-auto border-t border-bf-gold/25 pt-4">
+                      <p className="text-[15px] font-bold text-bf-gold-lt">{d.autora}</p>
+                      <p className="mt-0.5 text-[12px] text-bf-cream/60">{d.detalhe}</p>
                     </div>
-                  ))}
-            </div>
-            <PrecoBotao tema="escuro" className="!bg-bf-black" />
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
           </div>
-        </section>
-      )}
+          <PrecoBotao tema="escuro" className="!bg-bf-black" />
+        </div>
+      </section>
 
       {/* ---------- 8. Oferta final (preto) ---------- */}
       <section className="bg-bf-black py-16 md:py-24">
