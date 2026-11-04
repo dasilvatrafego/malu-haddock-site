@@ -294,7 +294,7 @@ export default function DestraveSeusOleos() {
                 width={640}
                 height={640}
                 priority
-                className="h-[104px] w-[104px] rounded-full md:h-[108px] md:w-[108px] lg:h-[124px] lg:w-[124px]"
+                className="h-[104px] w-[104px] rounded-full md:hidden"
               />
             ) : (
               <p className="text-[13px] font-bold tracking-[0.25em] text-bf-gold">
@@ -302,7 +302,7 @@ export default function DestraveSeusOleos() {
               </p>
             )}
 
-            <h1 className="mt-5 font-serif text-[38px] leading-[1.06] text-bf-cream md:text-[42px] lg:text-[54px]">
+            <h1 className="mt-5 font-serif md:mt-0 text-[38px] leading-[1.06] text-bf-cream md:text-[42px] lg:text-[54px]">
               Aquele vidrinho parado na gaveta tem{" "}
               <em className="text-bf-gold-lt">muito mais</em> para te dar do que perfume.
             </h1>
@@ -337,6 +337,17 @@ export default function DestraveSeusOleos() {
                 sizes="(min-width: 768px) 440px, 100vw"
                 className="object-cover object-[45%_center]"
               />
+              {/* No computador, o selo fica no alto da foto (no celular ele vem acima do título) */}
+              {temSelo && (
+                <Image
+                  src={SELO}
+                  alt="Black Friday · Destrave seus Óleos · Combo de cursos"
+                  width={640}
+                  height={640}
+                  priority
+                  className="absolute top-[3%] left-1/2 hidden aspect-square w-[44%] max-w-[185px] -translate-x-1/2 rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.5)] md:block"
+                />
+              )}
             </div>
           </Reveal>
         </div>
