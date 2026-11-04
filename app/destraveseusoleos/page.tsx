@@ -285,9 +285,11 @@ export default function DestraveSeusOleos() {
 
             <p className="mt-4 max-w-[540px] text-[16px] leading-[1.6] text-bf-cream/80">
               Três cursos com Malu Haddock Lobo, mais de 25 anos de prática clínica em
-              aromaterapia e Ayurveda e formação internacional. Você vai aprender a
-              usar seus óleos com segurança, descobrir quais combinam com o seu tipo e criar
-              seus próprios cosméticos, sem toxinas silenciosas.
+              aromaterapia e Ayurveda e formação internacional.{" "}
+              <strong className="font-bold text-bf-cream">
+                Você vai aprender a usar seus óleos com segurança, descobrir quais combinam com o
+                seu tipo e criar seus próprios cosméticos, sem toxinas silenciosas.
+              </strong>
             </p>
 
             <div className="mt-6">
@@ -317,19 +319,21 @@ export default function DestraveSeusOleos() {
       </section>
 
       {/* ---------- 2. Talvez seja você ---------- */}
-      <section className="bg-bf-cream py-16 md:py-24">
-        <div className="site-container grid items-center gap-10 md:grid-cols-2 md:gap-14">
+      <section className="bg-bf-cream py-10 md:py-12">
+        <div className="site-container grid items-center gap-8 md:grid-cols-2 md:gap-14">
           <Reveal>
             <p className="text-[12px] font-bold tracking-[0.3em] text-bf-gold">
               TALVEZ SEJA VOCÊ
             </p>
             <h2 className="mt-4 font-serif text-[34px] leading-[1.15] text-black md:text-[42px]">
-              Você comprou lavanda porque disseram que acalma.
+              Você comprou lavanda{" "}
+              <strong className="font-bold">porque disseram que acalma.</strong>
             </h2>
             <div className="mt-6 space-y-4 text-[17px] leading-[1.75] text-[#3a332c]">
               <p>Depois veio o alecrim, o limão-siciliano, talvez um kit inteiro.</p>
               <p>
-                Hoje eles estão ali, enfileirados. Você abre um de vez em quando, sente o
+                <strong className="font-bold text-black">Hoje eles estão ali, enfileirados.</strong>{" "}
+                Você abre um de vez em quando, sente o
                 cheiro, fecha de novo.
               </p>
             </div>
@@ -351,7 +355,7 @@ export default function DestraveSeusOleos() {
               </div>
             </div>
           </Reveal>
-          <PrecoBotao className="md:col-span-2" />
+          <PrecoBotao className="!mt-2 md:col-span-2" />
         </div>
       </section>
 
