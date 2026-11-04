@@ -132,17 +132,41 @@ function Icone({ nome }: { nome: keyof typeof ICONES }) {
   );
 }
 
-const PARA_QUEM_E: { icone: keyof typeof ICONES; texto: string }[] = [
-  { icone: "gota", texto: "Tem óleos essenciais parados em casa e quer usá-los com segurança" },
+const PARA_QUEM_E: { icone: keyof typeof ICONES; texto: React.ReactNode }[] = [
+  {
+    icone: "gota",
+    texto: (
+      <>
+        Tem óleos essenciais parados em casa e <strong>quer usá-los com segurança</strong>
+      </>
+    ),
+  },
   {
     icone: "pessoa",
-    texto: "Sente que “o óleo que funciona para todo mundo” não funciona para você",
+    texto: (
+      <>
+        <strong>Sente que</strong> “o óleo que funciona para todo mundo”{" "}
+        <strong>não funciona para você</strong>
+      </>
+    ),
   },
   {
     icone: "maos",
-    texto: "Quer trocar cosméticos industrializados por algo feito com as próprias mãos",
+    texto: (
+      <>
+        Quer <strong>trocar cosméticos industrializados</strong> por algo feito com as próprias
+        mãos
+      </>
+    ),
   },
-  { icone: "folha", texto: "Busca um cuidado natural que une ciência, ritual e ancestralidade" },
+  {
+    icone: "folha",
+    texto: (
+      <>
+        <strong>Busca um cuidado natural</strong> que une ciência, ritual e ancestralidade
+      </>
+    ),
+  },
 ];
 
 /** Depoimentos em vídeo, reaproveitados da home e da página /cosmetico. */
@@ -188,7 +212,7 @@ function PrecoBotao({
   const escuro = tema === "escuro";
   return (
     <div
-      className={`mx-auto mt-12 flex max-w-[760px] flex-col items-center gap-5 rounded-[15px] px-6 py-6 md:flex-row md:justify-between md:px-8 ${
+      className={`mx-auto mt-10 flex max-w-[760px] flex-col items-center gap-5 rounded-[15px] px-6 py-6 md:flex-row md:justify-between md:px-8 ${
         escuro ? "border border-bf-gold/40 bg-bf-ink" : "bg-bf-black"
       } ${className}`}
     >
@@ -360,7 +384,7 @@ export default function DestraveSeusOleos() {
       </section>
 
       {/* ---------- 3. A virada + preço (preto) ---------- */}
-      <section className="bg-bf-black py-16 md:py-24">
+      <section className="bg-bf-black py-10 md:py-12">
         <div className="site-container text-center">
           <Reveal>
             <p className="text-[12px] font-bold tracking-[0.3em] text-bf-gold">
@@ -373,8 +397,10 @@ export default function DestraveSeusOleos() {
             <p className="mx-auto mt-8 max-w-[720px] text-[17px] leading-[1.75] text-bf-cream/80">
               O mesmo óleo que acalma uma pessoa pode agitar outra. O Ayurveda explica isso há
               milênios, com os doshas. Quando você une aromaterapia, Ayurveda e as mãos na
-              massa, seus vidrinhos viram ritual,{" "}
-              <strong className="text-bf-cream">cuidado natural</strong> e autonomia.
+              massa,{" "}
+              <strong className="font-bold text-bf-cream">
+                seus vidrinhos viram ritual, cuidado natural e autonomia.
+              </strong>
             </p>
           </Reveal>
           <Reveal delay={100}>
@@ -386,7 +412,7 @@ export default function DestraveSeusOleos() {
       </section>
 
       {/* ---------- 4. O que você leva (preto) ---------- */}
-      <section className="bg-bf-black py-16 md:py-24">
+      <section className="bg-bf-black py-10 md:py-12">
         <div className="site-container">
           <Reveal>
             <p className="text-center text-[12px] font-bold tracking-[0.3em] text-bf-gold">
@@ -429,7 +455,7 @@ export default function DestraveSeusOleos() {
       </section>
 
       {/* ---------- 5. Para quem é / não é ---------- */}
-      <section className="bg-bf-cream py-16 md:py-24">
+      <section className="bg-bf-cream py-10 md:py-12">
         <div className="site-container grid items-start gap-10 md:grid-cols-[1.2fr_1fr]">
           <Reveal>
             <p className="text-[12px] font-bold tracking-[0.3em] text-bf-gold">PARA QUEM É</p>
@@ -438,9 +464,11 @@ export default function DestraveSeusOleos() {
             </h2>
             <ul className="mt-8 space-y-5">
               {PARA_QUEM_E.map((li) => (
-                <li key={li.texto} className="flex items-center gap-4">
+                <li key={li.icone} className="flex items-center gap-4">
                   <Icone nome={li.icone} />
-                  <span className="text-[17px] leading-[1.55] text-[#3a332c]">{li.texto}</span>
+                  <span className="text-[17px] leading-[1.55] text-[#3a332c] [&_strong]:font-bold [&_strong]:text-black">
+                    {li.texto}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -474,7 +502,7 @@ export default function DestraveSeusOleos() {
       </section>
 
       {/* ---------- 6. Quem ensina ---------- */}
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-white py-10 md:py-12">
         <div className="site-container grid items-center gap-12 md:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
             <div className="relative mx-auto aspect-[3/4] w-full max-w-[400px] overflow-hidden rounded-t-full border border-bf-gold/40 shadow-[0_20px_40px_rgba(0,0,0,0.18)]">
@@ -521,7 +549,7 @@ export default function DestraveSeusOleos() {
       </section>
 
       {/* ---------- 7. Depoimentos ---------- */}
-      <section className="bg-bf-cream py-16 md:py-24">
+      <section className="bg-bf-cream py-10 md:py-12">
         <div className="site-container">
           <Reveal>
             <p className="text-center text-[12px] font-bold tracking-[0.3em] text-bf-gold">
@@ -560,7 +588,7 @@ export default function DestraveSeusOleos() {
       </section>
 
       {/* ---------- 8. Oferta final (preto) ---------- */}
-      <section className="bg-bf-black py-16 md:py-24">
+      <section className="bg-bf-black py-10 md:py-12">
         <div className="site-container text-center">
           <Reveal>
             {temSelo && (
