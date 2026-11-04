@@ -569,7 +569,7 @@ export default function DestraveSeusOleos() {
                 alt="Black Friday · Destrave seus Óleos · Combo de cursos"
                 width={640}
                 height={640}
-                className="mx-auto h-[200px] w-[200px] rounded-full ring-1 ring-bf-gold/50 ring-offset-8 ring-offset-bf-black md:h-[260px] md:w-[260px]"
+                className="mx-auto h-[200px] w-[200px] rounded-full md:h-[260px] md:w-[260px]"
               />
             )}
             <h2 className="mt-10 font-serif text-[40px] leading-[1.1] text-bf-cream md:text-[60px]">
