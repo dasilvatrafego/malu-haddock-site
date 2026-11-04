@@ -260,8 +260,8 @@ export default function DestraveSeusOleos() {
   return (
     <div className="font-nunito">
       {/* ---------- 1. Hero (preto) ---------- */}
-      <section className="overflow-hidden bg-bf-black py-14 md:py-20">
-        <div className="site-container grid items-center gap-12 md:grid-cols-[1.1fr_1fr]">
+      <section className="overflow-hidden bg-bf-black py-8 md:py-10">
+        <div className="site-container grid items-center gap-8 md:grid-cols-[1.15fr_1fr] md:gap-10">
           <Reveal>
             {temSelo ? (
               <Image
@@ -270,7 +270,7 @@ export default function DestraveSeusOleos() {
                 width={640}
                 height={640}
                 priority
-                className="h-[150px] w-[150px] rounded-full md:h-[190px] md:w-[190px]"
+                className="h-[104px] w-[104px] rounded-full md:h-[108px] md:w-[108px] lg:h-[124px] lg:w-[124px]"
               />
             ) : (
               <p className="text-[13px] font-bold tracking-[0.25em] text-bf-gold">
@@ -278,35 +278,31 @@ export default function DestraveSeusOleos() {
               </p>
             )}
 
-            <p className="mt-8 text-[12px] font-bold tracking-[0.3em] text-bf-gold">
-              MALU HADDOCK LOBO · AROMATERAPIA &amp; AYURVEDA
-            </p>
-
-            <h1 className="mt-4 font-serif text-[42px] leading-[1.08] text-bf-cream md:text-[60px]">
+            <h1 className="mt-5 font-serif text-[38px] leading-[1.06] text-bf-cream md:text-[42px] lg:text-[54px]">
               Aquele vidrinho parado na gaveta tem{" "}
               <em className="text-bf-gold-lt">muito mais</em> para te dar do que perfume.
             </h1>
 
-            <p className="mt-7 max-w-[540px] text-[17px] leading-[1.75] text-bf-cream/80">
+            <p className="mt-4 max-w-[540px] text-[16px] leading-[1.6] text-bf-cream/80">
               Três cursos com Malu Haddock Lobo, mais de 25 anos de prática clínica em
               aromaterapia e Ayurveda e formação internacional. Você vai aprender a
               usar seus óleos com segurança, descobrir quais combinam com o seu tipo e criar
               seus próprios cosméticos, sem toxinas silenciosas.
             </p>
 
-            <div className="mt-9">
+            <div className="mt-6">
               <Cta>Quero meus óleos fora da gaveta</Cta>
             </div>
-            <p className="mt-5 text-[14px] text-bf-cream/70">
+            <p className="mt-4 text-[14px] text-bf-cream/70">
               3 cursos · De R$ 990 por{" "}
               <strong className="text-bf-gold-lt">12x de {PRECO.parcela}</strong> ou {PRECO.vista} à
-              vista · Garantia de 7 dias
+              vista · <span className="whitespace-nowrap">Garantia de 7 dias</span>
             </p>
           </Reveal>
 
           <Reveal delay={150}>
             {/* Foto em arco, como na prévia da Lovable */}
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-[440px] overflow-hidden rounded-t-full border border-bf-gold/40">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[400px] overflow-hidden rounded-t-full border border-bf-gold/40 md:h-[min(500px,calc(100svh-140px))] md:w-auto md:max-w-full">
               <Image
                 src={FOTO_HERO}
                 alt="Mãos segurando frascos de óleos essenciais de aroeira, breu branco e cagaita"
