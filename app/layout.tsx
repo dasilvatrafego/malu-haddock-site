@@ -10,6 +10,7 @@ import {
 import "./globals.css";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+import MetaPixel from "@/components/site/MetaPixel";
 import { SITE_URL } from "@/lib/site";
 
 /* Fontes do original que existem no Google Fonts */
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main>{children}</main>
         <Footer />
+        <MetaPixel />
       </body>
     </html>
   );
