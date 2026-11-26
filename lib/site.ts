@@ -28,6 +28,9 @@ export const CHECKOUT = {
   destraveSeusOleos: "https://pay.hotmart.com/O108280785F",
 } as const;
 
+/** Pixel principal do Meta (Facebook/Instagram), carregado em todas as páginas. */
+export const META_PIXEL_ID = "837503644302634";
+
 /** Grupo de WhatsApp do pré-lançamento Travessia (Mulheres 40+). */
 export const GRUPO_TRAVESSIA = "https://chat.whatsapp.com/BPty1DQPXZ2H9G3rmAPV3H";
 
